@@ -1,4 +1,4 @@
-#Selenide + Appium + Allure + TestNG
+# Selenide + Appium + Allure + TestNG
 A test framework for **mobile** automation (Android).
 ##
 ### Usage:
