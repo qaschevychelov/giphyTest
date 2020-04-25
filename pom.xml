@@ -9,8 +9,10 @@
   <properties>
     <slf4j.v>1.7.13</slf4j.v>
     <selenide.v>5.11.1</selenide.v>
-    <allure.version>1.5.4</allure.version>
-    <aspectj.version>1.8.10</aspectj.version>
+    <allure.testNG.version>2.13.3</allure.testNG.version>
+    <allure.maven.version>2.10.0</allure.maven.version>
+    <allure.report.version>2.13.2</allure.report.version>
+    <aspectj.version>1.9.4</aspectj.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <appium.v>7.3.0</appium.v>
@@ -23,6 +25,12 @@
       <version>3.141.59</version>
     </dependency>
     <dependency>
+      <groupId>io.qameta.allure</groupId>
+      <artifactId>allure-testng</artifactId>
+      <version>${allure.testNG.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
       <version>7.1.0</version>
@@ -31,11 +39,6 @@
       <groupId>io.appium</groupId>
       <artifactId>java-client</artifactId>
       <version>${appium.v}</version>
-    </dependency>
-    <dependency>
-      <groupId>ru.yandex.qatools.allure</groupId>
-      <artifactId>allure-testng-adaptor</artifactId>
-      <version>${allure.version}</version>
     </dependency>
     <dependency>
       <groupId>com.codeborne</groupId>
@@ -57,6 +60,14 @@
 
   <build>
     <plugins>
+      <plugin>
+        <groupId>io.qameta.allure</groupId>
+        <artifactId>allure-maven</artifactId>
+        <version>${allure.maven.version}</version>
+        <configuration>
+          <reportVersion>${allure.report.version}</reportVersion>
+        </configuration>
+      </plugin>
       <plugin>
         <groupId>org.jvnet.jaxb2.maven2</groupId>
         <artifactId>maven-jaxb2-plugin</artifactId>
@@ -82,7 +93,7 @@
         <version>2.22.2</version>
         <configuration>
           <argLine>
-            -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
+            -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
           </argLine>
         </configuration>
         <dependencies>
@@ -105,16 +116,5 @@
       </plugin>
     </plugins>
   </build>
-
-  <reporting>
-    <excludeDefaults>true</excludeDefaults>
-    <plugins>
-      <plugin>
-        <groupId>ru.yandex.qatools.allure</groupId>
-        <artifactId>allure-maven-plugin</artifactId>
-        <version>2.2</version>
-      </plugin>
-    </plugins>
-  </reporting>
 
 </project>

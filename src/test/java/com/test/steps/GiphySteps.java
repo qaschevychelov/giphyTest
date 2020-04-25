@@ -3,7 +3,7 @@ package com.test.steps;
 import com.test.pages.MainPage;
 import com.test.pages.SearchPage;
 import com.test.util.DriverUtils;
-import ru.yandex.qatools.allure.annotations.Step;
+import io.qameta.allure.Step;
 
 import java.util.List;
 

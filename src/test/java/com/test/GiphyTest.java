@@ -3,10 +3,10 @@ package com.test;
 import com.codeborne.selenide.WebDriverRunner;
 import com.test.steps.GiphySteps;
 import com.test.util.SourceDriver;
+import io.qameta.allure.Description;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import ru.yandex.qatools.allure.annotations.Description;
 
 import java.util.List;
 
