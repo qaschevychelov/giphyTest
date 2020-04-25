@@ -10,9 +10,9 @@ A test framework for **mobile** automation (Android).
 ### Usage:
 1. run **Appium** node with `appium` command
 2. run a test or a test suite:
-* a single test via `mvn test -Dtest=GiphyTest`
-* a test suite via `mvn test -Dsuite=testng`
-3. run `allure serve target/allure-results` in order to start allure report server
+    * a single test via `mvn test -Dtest=GiphyTest`
+    * a test suite via `mvn test -Dsuite=testng`
+3. get report with `allure:report` command. Allure report will be generated in `target/site` folder. Open `target/site/index.html` in a browser
 ##
 ## Report example
 ![report example](src/test/resources/report_example.png)
