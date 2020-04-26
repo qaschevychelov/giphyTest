@@ -2,10 +2,12 @@ package com.test;
 
 import com.codeborne.selenide.WebDriverRunner;
 import com.test.steps.GiphySteps;
+import com.test.util.ScreenShot;
 import com.test.util.SourceDriver;
 import io.qameta.allure.Description;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -13,6 +15,7 @@ import java.util.List;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
+@Listeners({ScreenShot.class})
 public class GiphyTest {
     private GiphySteps giphySteps;
 
